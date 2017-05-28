@@ -1,0 +1,25 @@
+			<ul>
+				<li>Votre IP <b>[{{data.current_ip}}]</b> </li>
+				<li>Route {{data.current_server}} <b>[{{data.current_server_name}}]</b> </li>
+				<li>Filtre : <input type="text" ng-model="search"></lI>
+			</ul>
+			<table class="table table-striped" >
+				<tr>
+					<th>IP</th>
+					<th>Nom</th>
+					<th>&nbsp;</th>
+				</tr>
+				<tr ng-repeat="server in data.servers| filter:search" >
+					<td>
+						{{server.ip}}
+					</td>
+					<td >
+						<b>{{server.name}}</b>
+					</td>
+					<td>
+						<button type="button" class="btn btn-default btn-sm" ng-click="changeTo(server.ip, data.current_ip, server.username)">
+							<span class="glyphicon glyphicon-pencil"></span>
+						</button>
+					</td>
+				</tr>
+			</table>

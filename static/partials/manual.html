@@ -1,0 +1,16 @@
+		<form name="changeserver">
+			<div class="form-group">
+				<p class="help-block">
+					Serveur DNS actuel : {{data.current_server}} <b>[{{data.current_server_name}}]</b>
+				</p>
+			</div>
+			<div class="form-group">
+				<label for="server">Nouvelle route</label>
+				<input class="form-control" id="server" ng-model="data.new_server" placeholder="adresse IP xxx.xxx.xxx.xxx">
+			</div>
+			<div class="form-group">
+				<label for="client">IP client</label>
+				<input class="form-control" id="client" ng-model="data.current_ip" placeholder="adresse IP xxx.xxx.xxx.xxx">
+			</div>
+			<button value="change" ng-click="set(data.new_server, data.current_ip)">Changer</button>
+		</form>

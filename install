@@ -1,0 +1,5 @@
+cd /etc/init.d 
+ln -s /opt/minirouter/init minirouter
+cd /opt/minirouter
+chmod a+x init
+sudo update-rc.d minirouter defaults
